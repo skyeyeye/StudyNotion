@@ -13,36 +13,33 @@ The StudyNotion project is designed to streamline the educational process. It al
 
 StudyNotion is built using the following technologies:
 
-### FRONTEND
+### Frontend
+<a F="frontend"></a>
+<p>
+  <a href="https://www.w3schools.com/html/"> <img src="https://img.icons8.com/color/70/000000/html-5--v1.png" alt="HTML" /></a>
+  <a href="https://www.w3schools.com/css/"> <img src="https://img.icons8.com/color/70/000000/css3.png" alt="CSS" /></a>
+  <a href="https://www.w3schools.com/js/"><img src="https://img.icons8.com/color/70/000000/javascript--v1.png" alt="JS" /></a>
+  <a href="https://www.w3schools.com/REACT/DEFAULT.ASP"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="React.js" width="50" height="50" /></a>
+  </p>
 
-- *FIGMA :*
-  Figma is a collaborative interface design tool that enables multiple users to work on designing clean and minimal user interfaces simultaneously. Its cloud-based approach makes it accessible for design teams to create, prototype, and collaborate on user interface designs.
+- **HTML**:HTML (HyperText Markup Language) is a skeleton of a website, structuring content with tags and elements.
+- **CSS**:CSS is a style sheet language used to style web pages.It enables the application of different styles based on media types and user preferences, enhancing user accessibility and readability
+- **JavaScript**:JavaScript is a programming language used to add interactivity to websites.
+- **React.js**:A JavaScript library for building user interfaces. It allows developers to create large web applications that can update and render efficiently in response to data changes.
 
-- *REACT.JS :*
-  React.js is a widely used JavaScript library for building user interfaces. It allows for the creation of interactive and reusable UI components, enabling efficient rendering and managing of application state, leading to a seamless user experience.
+### Backend
+<a m="backend"></a>
+<p>
+<a href="https://www.w3schools.com/nodejs/"><img src="https://e7.pngegg.com/pngimages/247/558/png-clipart-node-js-javascript-express-js-npm-react-github-angle-text.png" alt="Node.js" width="50" height="50" /></a>
+<a href="https://www.javatpoint.com/expressjs-tutorial"><img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169185.png" alt="expressjs" width="50" height="50" /></a>
+<a href="https://www.mongodb.com/docs/"><img src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon-thumbnail.png" alt="MongoDB" width="50" height="50" /></a>
+</p>
 
-- *CSS & TAILWIND :*
-  Both CSS (Cascading Style Sheets) and Tailwind CSS are styling frameworks used to create visually appealing and responsive user interfaces. CSS is the fundamental technology for styling web pages, while Tailwind CSS is a utility-first CSS framework that aids in building custom designs by composing utility classes.
+- **MongoDB**: A NoSQL database that provides high performance, high availability, and easy scalability. It stores data in flexible, JSON-like documents.
+- **Express.js**: A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+- **Node.js**: A JavaScript runtime built on Chrome's V8 JavaScript engine, enabling server-side scripting and running scripts server-side to produce dynamic web page content.
 
-- *REDUX :*
-  Redux is a predictable state container for JavaScript applications. It helps manage the application's state and centralizes the state logic, making it easier to maintain and manage state changes across different parts of the application.
-
-- *CHART.JS :*
-  Chart.js is an open-source JavaScript charting library that allows developers to create interactive and visually appealing charts on web applications. It's easy to use and provides a variety of chart types, making data visualization more accessible and engaging for users.
-
-### BACKEND
-
-- *NODE.JS :*
-  Node.js is a server-side runtime environment that allows the execution of JavaScript code outside a web browser. It is based on the V8 JavaScript engine and is designed to build scalable and fast network applications. In StudyNotion, Node.js serves as the foundational technology for the backend, facilitating the server operations, handling HTTP requests, and managing the overall application workflow.
-
-- *EXPRESS.JS :*
-  Express.js is a minimal and flexible Node.js web application framework. It provides a robust set of features to build web applications and APIs. In the context of StudyNotion, Express.js simplifies routing, middleware implementation, and handling HTTP requests, allowing for efficient creation and management of backend APIs.
-
-- *MONGODB :*
-  MongoDB is a popular NoSQL database that uses a flexible and JSON-like document structure. It's well-known for its scalability, flexibility, and high performance. StudyNotion leverages MongoDB to store and manage data efficiently, allowing for easy adaptation to changing data requirements and enabling seamless integration with the application.
-
-- *CLOUDINARY :*
-  Cloudinary is a cloud-based media management solution that specializes in the storage, optimization, and delivery of images and videos. In StudyNotion, Cloudinary plays a crucial role in managing all media-related content, including images, videos, and documents. It provides functionalities for uploading, storage, and manipulation of media files, ensuring a reliable and scalable media management system.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## ARCHITECTURE DIAGRAM
 
@@ -178,9 +175,180 @@ In conclusion, this document outlines the architecture, features, and functional
 Throughout the development of the project, various achievements will be made in terms of implementing the desired functionalities and creating a user-friendly interface. However, there will be challenges to be faced during the development process, such as integrating different technologies and debugging errors.
 
 
-## OPEN SOURCE
+## How to Contribute?
+<a k="how-to-contribute"></a>
+<div>
+  <h3> Installation and Setup Guide </h3>
+</div
 
-We welcome contributions to enhance StudyNotion. Please fork the repository, make your changes, and submit a pull request for review.
+<br>
+
+To get started with StudyNotion on your local machine, follow these steps:
+
+#### Prerequisites
+
+
+Before you begin, ensure you have the following prerequisites installed:
+
+- Node.js (version X.X.X) ⚙️
+- MongoDB (version X.X.X) 📦
+- Git 📂
+
+  <p align="right">(<a href="#top">back to top</a>)</p>
+
+#### Installation Steps
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/StudyNotion-An-Online-Education-Platform.git
+   ```
+
+2. **Navigate to the Project Directory:**
+
+   ```bash
+   cd StudyNotion-An-Online-Education-Platform
+   ```
+
+3. **Install Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Set Environment Variables:**
+
+   ```bash
+   cd server
+   ```
+
+   Create a `.env` file or rename it to `.env` if exists already in server for the following environment variables:
+
+   ```bash
+   PORT = 4000
+   MONGODB_URL = 
+
+   # Nodemailer
+   MAIL_HOST = smtp.gmail.com
+   MAIL_USER = 
+   MAIL_PASS = 
+   #*Controllers
+   #login 
+   JWT_SECRET = 
+
+   #cloudinary
+   CLOUD_NAME = 
+   API_KEY =
+   API_SECRET = 
+   FOLDER_NAME = "StudyNotion"
+
+   #*Config
+   #Razorpay
+   RAZORPAY_KEY = 
+   RAZORPAY_SECRET = 
+
+   ```
+
+   1] ***Keep the port number as it is.***
+
+   2] ***For MONGODB_URL follow below steps –***
+    - If you want to connect db locally replace MONGO_URI with `mongodb://localhost:27017/db_name `, Where db_name is the database name, you can give yours.
+    - If you want to connect using MONGO_ATLAS, then do the following steps
+      - Signup or login for Mongo DB atlas via https://account.mongodb.com/account/register?_ga=2.174802465.288724901.1646250007-570639881.1643975138
+      
+      - Once you login, click on create button
+       
+        ![Picture1](https://github.com/PratikMane0112/StudyNotion-An-Online-Education-Platform/assets/153143167/5f532e9f-7fae-4457-b154-086e301c635f)
+
+      - Again, click on Create Cluster Button
+            
+        ![Picture2](https://github.com/PratikMane0112/StudyNotion-An-Online-Education-Platform/assets/153143167/9666ff59-cbd3-4767-a39a-3b5ef302c6dc)
+
+      - Wait for few minutes, and then following dashboard will appear
+       
+        ![Picture3](https://github.com/PratikMane0112/StudyNotion-An-Online-Education-Platform/assets/153143167/e801e934-005f-4595-ac1f-2fb9930e6ff1)
+
+      - Click on connect and choose your application.
+        
+        ![Picture4](https://github.com/PratikMane0112/StudyNotion-An-Online-Education-Platform/assets/153143167/0c60ab29-4497-4422-af84-45bacfa016a3)
+
+      - Copy the URL and add your name and password in url, which you have set when creating cluster, and put it .env file.
+        
+        ![Picture5](https://github.com/PratikMane0112/StudyNotion-An-Online-Education-Platform/assets/153143167/8566c9f2-4d07-44e7-91fb-d3608a6cd0b0)
+
+
+    3] ***For NodeMailer follow below steps –***
+
+    - By default, Gmail prevents bots from accessing emails hosted on Google servers. Gmail runs 
+      several checks to ensure that every email account is accessed by a recognized user at a 
+      recognized location.
+    - Google requires your account to have two-factor authentication (2FA) enabled to connect it to Nodemailer.
+    - We’ll also need to set up an app password. To do so, follow these steps:
+      - Make sure you’re logged in to your Gmail account
+      - Under How you sign in to Google, select 2-Step Verification
+      - You’ll be prompted to sign in to your email again
+      - Scroll down to App passwords and click the arrow, >
+      - In the Select app dropdown, select your app or enter a custom name, then do   the same 
+        for the Select device dropdown
+      - Click Generate, and a modal will pop up with your 16-digit app password.Copy it to 
+        somewhere secure
+
+     Now, Finally put your email in MAIL_USER & app password in MAIL_PASS in .env file. It is 
+     necessary, unless you will not receive OTP on  your mail.
+
+
+
+   4] ***For JWT_SECRET follow the below steps –***
+ 
+   - This is typically a secret key used for JWT (JSON Web Token) authentication in your 
+     application. 
+   - You can generate a random string using a tool like crypto in Node.js. For example:
+   ```bash
+   const crypto = require('crypto');
+   const jwtSecret = crypto.randomBytes(32).toString('hex');
+   console.log(jwtSecret);
+   ```
+   - Copy the generated string and paste it as the value for JWT_SECRET in your .env file.
+
+
+   5] ***For Cloudinary follow the below steps –***
+
+     - Sign Up for Cloudinary: Go to the Cloudinary website (https://cloudinary.com) and sign up 
+       for an account. You can choose the free plan to get started.
+     - Access Dashboard: After signing up and logging in, you'll be redirected to your Cloudinary 
+       dashboard.
+     - Find Your Cloud Name: Your Cloudinary cloud name is displayed on the dashboard. It's 
+       usually in the format [your_cloud_name]. Copy this value.
+     - Generate API Key and API Secret: In the Cloudinary dashboard, navigate to the "Account 
+       Details" or "Dashboard" section. Here, you'll find your API key and API secret. If you 
+       don't see them, you may need to generate them. Look for an option like "API Credentials" 
+       or "API Key & Secret". 
+     - If you need to generate API key and secret, click on the appropriate button/link and 
+       Cloudinary will provide you with the key and secret.   
+     - If they are already provided, simply copy them.
+     - Now that you have your Cloudinary “CLOUD_NAME”, “API_KEY”, and “API_SECRET”, you can set 
+       them up in your .env file as described earlier.
+       CLOUD_NAME=your_cloud_name
+       API_KEY=your_api_key
+       API_SECRET=your_api_secret
+
+   6] ***For Razorpay follow the below steps-***
+
+     - Log in to your Dashboard with appropriate credentials.
+     - Select the mode (Test or Live) for which you want to generate the API key.
+     - Select the `test mode` for project.
+     - Test Mode: The test mode is a simulation mode that you can use to test  your integration 
+       flow. Your customers will not be able to make payments in this mode.
+     - Navigate to Account & Settings → API Keys (under Website and app settings) → Generate Key 
+       to generate key for the selected mode.
+     - The “Key Id” and “Key Secret” appear on a pop-up page. you can set them up in your .env 
+       file as described earlier.
+       RAZORPAY_KEY = “your_razorpay_key”
+       RAZORPAY_SECRET = “your_razorpay_secret”
+      
+<hr>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- Open Source Programs -->
 
 ## LICENSE
 
