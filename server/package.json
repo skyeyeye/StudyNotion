@@ -1,0 +1,41 @@
+{
+  "engines": {
+    "node": "v20.10.0"
+  },
+  "name": "studynotion-backend",
+  "version": "1.0.0",
+  "description": "studynotion-backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client",
+    "start": "nodemon server/index.js"
+  },
+  "keywords": [
+    "studynotion-backend"
+  ],
+  "author": "Saikat Mukherjee",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.36.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto-random-string": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^6.9.0",
+    "mongoose": "^7.0.3",
+    "node-schedule": "^2.1.1",
+    "nodemailer": "^6.9.1",
+    "otp-generator": "^4.0.1",
+    "razorpay": "^2.8.6"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
+  }
+}

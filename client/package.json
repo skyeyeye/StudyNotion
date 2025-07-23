@@ -1,0 +1,74 @@
+{
+  "name": "StudyNotion",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mdx-js/react": "^3.0.1",
+    "@ramonak/react-progress-bar": "^5.2.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.7",
+    "chart.js": "^4.4.4",
+    "concurrently": "^9.0.1",
+    "copy-to-clipboard": "^3.3.3",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.53.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.3.0",
+    "react-markdown": "^9.0.1",
+    "react-otp-input": "^3.1.1",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^9.1.2",
+    "react-router-dom": "^6.26.2",
+    "react-scripts": "5.0.1",
+    "react-super-responsive-table": "^6.0.0",
+    "react-type-animation": "^3.2.0",
+    "redux-toolkit": "^1.1.2",
+    "studynotion-backend": "file:..",
+    "swiper": "^11.1.14",
+    "video-react": "^0.16.0",
+    "web-vitals": "^2.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git"
+  },
+  "author": "Ayush Saha",
+  "bugs": {
+    "url": "https://github.com/thepranaygupta/react-tailwind-css-starter-pack/issues"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "concurrently": "^8.0.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "tailwindcss": "^3.4.11"
+  }
+}
