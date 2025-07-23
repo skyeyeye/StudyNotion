@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://completeproject.onrender.com","http://localhost:3000"],
+    origin: [ "https://study-notion-frontend-beige-delta.vercel.app","http://localhost:3000"],
     credentials: true,
   })
 );
