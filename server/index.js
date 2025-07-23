@@ -29,12 +29,32 @@ database.connect();
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
+// app.use(
+//   cors({
+//     origin: [ "https://study-notion-frontend-beige-delta.vercel.app","http://localhost:3000"],
+//     credentials: true,
+//   })
+// );
+const cors = require("cors")
+
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://study-notion-frontend-beige-delta.vercel.app",
+  "https://study-notion-frontend-ayush-sahas-projects-7fac14ec.vercel.app", // ⬅️ add this
+]
+
 app.use(
   cors({
-    origin: [ "https://study-notion-frontend-beige-delta.vercel.app","http://localhost:3000"],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true)
+      } else {
+        callback(new Error("Not allowed by CORS"))
+      }
+    },
     credentials: true,
   })
-);
+)
 app.use(
 	fileUpload({
 		useTempFiles: true,
