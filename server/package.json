@@ -4,6 +4,7 @@
   },
   "name": "studynotion-backend",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "studynotion-backend",
   "main": "index.js",
   "scripts": {

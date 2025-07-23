@@ -17,7 +17,7 @@ const path=require("path");
 // const __dirname = path.resolve();
 
 // Setting up port number
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 4000;
 
 // Loading environment variables from .env file
 dotenv.config();
