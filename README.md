@@ -201,7 +201,7 @@ Before you begin, ensure you have the following prerequisites installed:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/skyeyeye/StudyNotion.git
+   git clone https://github.com/yourusername/StudyNotion.git
    ```
 
 2. **Navigate to the Project Directory:**
@@ -249,9 +249,9 @@ Before you begin, ensure you have the following prerequisites installed:
 
    ```
 
-   1] ***Keep the port number as it is.***
+   1] **Keep the port number as it is.**
 
-   2] ***For MONGODB_URL follow below steps –***
+   2] **For MONGODB_URL follow below steps –**
     - If you want to connect db locally replace MONGO_URI with `mongodb://localhost:27017/db_name `, Where db_name is the database name, you can give yours.
     - If you want to connect using MONGO_ATLAS, then do the following steps
       - Signup or login for Mongo DB atlas via https://account.mongodb.com/account/register?_ga=2.174802465.288724901.1646250007-570639881.1643975138
@@ -277,7 +277,7 @@ Before you begin, ensure you have the following prerequisites installed:
         ![Picture5](https://github.com/PratikMane0112/StudyNotion-An-Online-Education-Platform/assets/153143167/8566c9f2-4d07-44e7-91fb-d3608a6cd0b0)
 
 
-    3] ***For NodeMailer follow below steps –***
+    3] **For NodeMailer follow below steps –**
 
     - By default, Gmail prevents bots from accessing emails hosted on Google servers. Gmail runs 
       several checks to ensure that every email account is accessed by a recognized user at a 
@@ -298,7 +298,7 @@ Before you begin, ensure you have the following prerequisites installed:
 
 
 
-   4] ***For JWT_SECRET follow the below steps –***
+   4] **For JWT_SECRET follow the below steps –**
  
    - This is typically a secret key used for JWT (JSON Web Token) authentication in your 
      application. 
@@ -311,7 +311,7 @@ Before you begin, ensure you have the following prerequisites installed:
    - Copy the generated string and paste it as the value for JWT_SECRET in your .env file.
 
 
-   5] ***For Cloudinary follow the below steps –***
+   5] **For Cloudinary follow the below steps –**
 
      - Sign Up for Cloudinary: Go to the Cloudinary website (https://cloudinary.com) and sign up 
        for an account. You can choose the free plan to get started.
@@ -332,7 +332,7 @@ Before you begin, ensure you have the following prerequisites installed:
        API_KEY=your_api_key
        API_SECRET=your_api_secret
 
-   6] ***For Razorpay follow the below steps-***
+   6] **For Razorpay follow the below steps-**
 
      - Log in to your Dashboard with appropriate credentials.
      - Select the mode (Test or Live) for which you want to generate the API key.
