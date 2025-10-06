@@ -179,49 +179,133 @@ exports.login = async (req, res) => {
   }
 }
 // Send OTP For Email Verification
+// exports.sendotp = async (req, res) => {
+//   try {
+//     const { email } = req.body
+
+//     // Check if user is already present
+//     // Find user with provided email
+//     const checkUserPresent = await User.findOne({ email })
+//     // to be used in case of signup
+
+//     // If user found with provided email
+//     if (checkUserPresent) {
+//       // Return 401 Unauthorized status code with error message
+//       return res.status(401).json({
+//         success: false,
+//         message: `User is Already Registered`,
+//       })
+//     }
+
+//     var otp = otpGenerator.generate(6, {
+//       upperCaseAlphabets: false,
+//       lowerCaseAlphabets: false,
+//       specialChars: false,
+//     })
+//     const result = await OTP.findOne({ otp: otp })
+//     console.log("Result is Generate OTP Func")
+//     console.log("OTP", otp)
+//     console.log("Result", result)
+//     while (result) {
+//       otp = otpGenerator.generate(6, {
+//         upperCaseAlphabets: false,
+//       })
+//     }
+//     const otpPayload = { email, otp }
+//     const otpBody = await OTP.create(otpPayload)
+//     console.log("OTP Body", otpBody)
+//     res.status(200).json({
+//       success: true,
+//       message: `OTP Sent Successfully`,
+//       otp,
+//     })
+//   } catch (error) {
+//     console.log(error.message)
+//     return res.status(500).json({ success: false, error: error.message })
+//   }
+// }
+// Send OTP For Email Verification
 exports.sendotp = async (req, res) => {
   try {
     const { email } = req.body
 
-    // Check if user is already present
-    // Find user with provided email
-    const checkUserPresent = await User.findOne({ email })
-    // to be used in case of signup
-
-    // If user found with provided email
-    if (checkUserPresent) {
-      // Return 401 Unauthorized status code with error message
-      return res.status(401).json({
+    // Check if email is provided
+    if (!email) {
+      return res.status(400).json({
         success: false,
-        message: `User is Already Registered`,
+        message: `Email is required`,
       })
     }
 
-    var otp = otpGenerator.generate(6, {
+    // Check if user is already present
+    const checkUserPresent = await User.findOne({ email })
+
+    // If user found with provided email
+    if (checkUserPresent) {
+      return res.status(400).json({
+        success: false,
+        message: `User is already registered. Please login instead.`,
+      })
+    }
+
+    // Generate OTP
+    let otp = otpGenerator.generate(6, {
       upperCaseAlphabets: false,
       lowerCaseAlphabets: false,
       specialChars: false,
     })
-    const result = await OTP.findOne({ otp: otp })
-    console.log("Result is Generate OTP Func")
-    console.log("OTP", otp)
-    console.log("Result", result)
+
+    // Ensure OTP is unique
+    let result = await OTP.findOne({ otp: otp })
     while (result) {
       otp = otpGenerator.generate(6, {
         upperCaseAlphabets: false,
+        lowerCaseAlphabets: false,
+        specialChars: false,
       })
+      result = await OTP.findOne({ otp: otp })
     }
+
+    // Create OTP payload and save to database
     const otpPayload = { email, otp }
     const otpBody = await OTP.create(otpPayload)
-    console.log("OTP Body", otpBody)
-    res.status(200).json({
-      success: true,
-      message: `OTP Sent Successfully`,
-      otp,
-    })
+    
+    console.log("OTP generated:", otp)
+    console.log("OTP saved to DB:", otpBody)
+
+    // Here you should send the OTP via email
+    try {
+      await mailSender(
+        email,
+        "Verification OTP",
+        `Your OTP for verification is: ${otp}. This OTP will expire in 10 minutes.`
+      )
+      
+      res.status(200).json({
+        success: true,
+        message: `OTP sent successfully to ${email}`,
+        // Don't send OTP in response in production
+        // otp, // Remove this in production
+      })
+    } catch (emailError) {
+      console.error("Error sending email:", emailError)
+      // Delete the OTP if email fails to send
+      await OTP.findByIdAndDelete(otpBody._id)
+      
+      return res.status(500).json({
+        success: false,
+        message: `Failed to send OTP email. Please try again.`,
+        error: emailError.message,
+      })
+    }
+
   } catch (error) {
-    console.log(error.message)
-    return res.status(500).json({ success: false, error: error.message })
+    console.error("Error in sendotp:", error)
+    return res.status(500).json({
+      success: false,
+      message: `Internal server error. Please try again.`,
+      error: error.message,
+    })
   }
 }
 
