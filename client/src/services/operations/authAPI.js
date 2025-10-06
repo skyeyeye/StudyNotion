@@ -15,6 +15,33 @@ const {
 } = endpoints
 
 export function sendOtp(email, navigate) {
+//   return async (dispatch) => {
+//     const toastId = toast.loading("Loading...")
+//     dispatch(setLoading(true))
+//     try {
+//       const response = await apiConnector("POST", SENDOTP_API, {
+//         email,
+//         checkUserPresent: true,
+//       })
+//       console.log("SENDOTP API RESPONSE............", response)
+
+//       console.log(response.data.success)
+
+//       if (!response.data.success) {
+//         throw new Error(response.data.message)
+//       }
+
+//       toast.success("OTP Sent Successfully")
+//       navigate("/verify-email")
+//     } catch (error) {
+//       console.log("SENDOTP API ERROR............", error)
+//       toast.error("Could Not Send OTP")
+//     }
+//     dispatch(setLoading(false))
+//     toast.dismiss(toastId)
+//   }
+// }
+  export function sendOtp(email, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
@@ -25,8 +52,6 @@ export function sendOtp(email, navigate) {
       })
       console.log("SENDOTP API RESPONSE............", response)
 
-      console.log(response.data.success)
-
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
@@ -35,7 +60,15 @@ export function sendOtp(email, navigate) {
       navigate("/verify-email")
     } catch (error) {
       console.log("SENDOTP API ERROR............", error)
-      toast.error("Could Not Send OTP")
+      
+      // Show specific error message from backend if available
+      if (error.response && error.response.data && error.response.data.message) {
+        toast.error(error.response.data.message)
+      } else if (error.message) {
+        toast.error(error.message)
+      } else {
+        toast.error("Could Not Send OTP")
+      }
     }
     dispatch(setLoading(false))
     toast.dismiss(toastId)
